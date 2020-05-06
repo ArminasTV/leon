@@ -1,8 +1,7 @@
 'use strict'
 
 import tts from '@google-cloud/text-to-speech'
-import Ffmpeg from 'fluent-ffmpeg'
-import { path as ffmpegPath } from '@ffmpeg-installer/ffmpeg'
+import Ffmpeg from 'fluent-ffmpeg' 
 import { path as ffprobePath } from '@ffprobe-installer/ffprobe'
 import fs from 'fs'
 
@@ -70,8 +69,7 @@ synthesizer.save = (speech, em, cb) => {
         return
       }
 
-      const ffmpeg = new Ffmpeg()
-      ffmpeg.setFfmpegPath(ffmpegPath)
+      const ffmpeg = new Ffmpeg() 
       ffmpeg.setFfprobePath(ffprobePath)
 
       // Get file duration thanks to ffprobe

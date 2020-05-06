@@ -1,6 +1,5 @@
 'use strict'
 
-import { path as ffmpegPath } from '@ffmpeg-installer/ffmpeg'
 import Ffmpeg from 'fluent-ffmpeg'
 import fs from 'fs'
 
@@ -39,8 +38,7 @@ class Asr {
           return
         }
 
-        const ffmpeg = new Ffmpeg()
-        ffmpeg.setFfmpegPath(ffmpegPath)
+        const ffmpeg = new Ffmpeg() 
 
         /**
          * Encode WebM file to WAVE file

@@ -1,8 +1,7 @@
 'use strict'
 
 import Tts from 'ibm-watson/text-to-speech/v1'
-import Ffmpeg from 'fluent-ffmpeg'
-import { path as ffmpegPath } from '@ffmpeg-installer/ffmpeg'
+import Ffmpeg from 'fluent-ffmpeg' 
 import { path as ffprobePath } from '@ffprobe-installer/ffprobe'
 import fs from 'fs'
 
@@ -66,8 +65,7 @@ synthesizer.save = (speech, em, cb) => {
     result.pipe(wStream)
 
     wStream.on('finish', () => {
-      const ffmpeg = new Ffmpeg()
-      ffmpeg.setFfmpegPath(ffmpegPath)
+      const ffmpeg = new Ffmpeg() 
       ffmpeg.setFfprobePath(ffprobePath)
 
       // Get file duration thanks to ffprobe

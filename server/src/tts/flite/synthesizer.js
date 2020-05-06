@@ -1,8 +1,7 @@
 'use strict'
 
 import { spawn } from 'child_process'
-import Ffmpeg from 'fluent-ffmpeg'
-import { path as ffmpegPath } from '@ffmpeg-installer/ffmpeg'
+import Ffmpeg from 'fluent-ffmpeg' 
 import { path as ffprobePath } from '@ffprobe-installer/ffprobe'
 import fs from 'fs'
 
@@ -63,8 +62,7 @@ synthesizer.save = (speech, em, cb) => {
   })
 
   process.stdout.on('end', () => {
-    const ffmpeg = new Ffmpeg()
-    ffmpeg.setFfmpegPath(ffmpegPath)
+    const ffmpeg = new Ffmpeg() 
     ffmpeg.setFfprobePath(ffprobePath)
 
     // Get file duration thanks to ffprobe
