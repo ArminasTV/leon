@@ -16,10 +16,10 @@ export default () => new Promise(async (resolve, reject) => {
   if (os.cpus().length > 2) {
     makeCores = `-j ${os.cpus().length - 2}`
   }
-  let downloader = 'wget'
+  /* let downloader = 'wget'
   if (os.get().type === 'macos') {
     downloader = 'curl -L -O'
-  }
+  } */
 
   if (!fs.existsSync(`${destFliteFolder}/flite`)) {
     try {
