@@ -10,7 +10,7 @@ export default () => new Promise(async (resolve, reject) => {
   log.info('Setting up offline hotword detection...')
 
   const info = os.get()
-  let pkgm = 'apt-get install'
+  let pkgm = 'apt install'
   if (info.type === 'macos') {
     pkgm = 'brew'
   }
@@ -22,7 +22,7 @@ export default () => new Promise(async (resolve, reject) => {
     try {
       log.info('Installing dependencies...')
 
-      let cmd = `sudo ${pkgm} sox libsox-fmt-all -y`
+      let cmd = ` ${pkgm} sox libsox-fmt-all -y`
       if (info.type === 'linux') {
         log.info(`Executing the following command: ${cmd}`)
         await shell(cmd)
