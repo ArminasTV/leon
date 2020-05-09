@@ -17,7 +17,6 @@ bin/flite/*
 *.sublime-workspace
 npm-debug.log
 debug.log
-.env
 !**/.gitkeep
 !bridges/python/.venv/.gitkeep
 !**/*.sample*
