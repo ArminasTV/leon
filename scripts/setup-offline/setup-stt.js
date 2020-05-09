@@ -13,7 +13,8 @@ export default () => new Promise(async (resolve, reject) => {
   const destDeepSpeechFolder = 'bin/deepspeech'
   const tmpDir = 'scripts/tmp'
   const deepSpeechVersion = '0.5.0'
-  const archiveName = `deepspeech-${deepSpeechVersion}-models.tar.gz`
+  // const archiveName = `deepspeech-${deepSpeechVersion}-models.tar.gz`
+  const archiveName = 'model_tflite_fr.tar.xz'
   let downloader = 'wget'
   if (os.get().type === 'macos') {
     downloader = 'curl -L -O'
@@ -22,10 +23,12 @@ export default () => new Promise(async (resolve, reject) => {
   if (!fs.existsSync(`${destDeepSpeechFolder}/lm.binary`)) {
     try {
       log.info('Downloading pre-trained model...')
-      await shell(`cd ${tmpDir} && ${downloader} https://github.com/mozilla/DeepSpeech/releases/download/v${deepSpeechVersion}/${archiveName}`)
+      // await shell(`cd ${tmpDir} && ${downloader} https://github.com/mozilla/DeepSpeech/releases/download/v${deepSpeechVersion}/${archiveName}`)
+      await shell(`cd ${tmpDir} && ${downloader} https://github.com/Common-Voice/commonvoice-fr/releases/download/v0.6.0-fr-0.3.4/${archiveName}`)
       log.success('Pre-trained model download done')
       log.info('Unpacking...')
-      await shell(`cd ${tmpDir} && tar xvfz ${archiveName}`)
+      // await shell(`cd ${tmpDir} && tar xvfz ${archiveName}`)
+      await shell(`cd ${tmpDir} && tar -xJf ${archiveName}`)
       log.success('Unpack done')
       log.info('Moving...')
       await shell(`mv -f ${tmpDir}/deepspeech-${deepSpeechVersion}-models/* ${destDeepSpeechFolder} && rm -rf ${tmpDir}/${archiveName} ${tmpDir}/models`)
