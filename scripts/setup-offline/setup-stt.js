@@ -14,12 +14,12 @@ export default () => new Promise(async (resolve, reject) => {
   const tmpDir = 'scripts/tmp'
   // const deepSpeechVersion = '0.5.0'
   // const archiveName = `deepspeech-${deepSpeechVersion}-models.tar.gz`
-  const archiveName = 'model_tflite_fr.tar.xz'
+  const archiveName = 'model_tensorflow_fr.tar.xz'
   let downloader = 'wget'
   if (os.get().type === 'macos') {
     downloader = 'curl -L -O'
-  }
-
+  } 
+  
   if (!fs.existsSync(`${destDeepSpeechFolder}/lm.binary`)) {
     try {
       log.info('Downloading pre-trained model...') 
