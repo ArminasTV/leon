@@ -5,7 +5,7 @@ import log from '@/helpers/log'
 import os from '@/helpers/os'
 
 import train from '../train'
-import setupDotenv from './setup-dotenv'
+// import setupDotenv from './setup-dotenv'
 import setupCore from './setup-core'
 import setupPackagesConfig from './setup-packages-config'
 import setupPythonPackages from './setup-python-packages';
@@ -24,7 +24,7 @@ import setupPythonPackages from './setup-python-packages';
     process.env.PIPENV_PIPFILE = 'bridges/python/Pipfile'
     process.env.PIPENV_VENV_IN_PROJECT = 'true'
 
-    await setupDotenv()
+    // await setupDotenv()
     loader.start()
     await Promise.all([
       setupCore(),
