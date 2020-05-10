@@ -27,7 +27,7 @@ export default () => new Promise(async (resolve, reject) => {
       log.success('Pre-trained model download done')
       log.info('Unpacking...')
       // await shell(`cd ${tmpDir} && tar xvfz ${archiveName}`)
-      await shell(`cd ${tmpDir} && mkdir models && tar -xJf ${archiveName} && ./models`)
+      await shell(`cd ${tmpDir} && mkdir models && tar -xJf ${archiveName} -C ./models`)
       log.success('Unpack done')
       log.info('Moving...') 
       await shell(`mv -f ${tmpDir}/models/* ${destDeepSpeechFolder} && rm -rf ${tmpDir}/${archiveName} ${tmpDir}/models`)

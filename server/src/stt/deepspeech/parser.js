@@ -61,7 +61,7 @@ let model = { }
  * Model and language model paths
  */
 parser.conf = {
-  model: 'bin/deepspeech/output_graph.pb',
+  model: 'bin/deepspeech/output_graph.tflite',
   alphabet: 'bin/deepspeech/alphabet.txt',
   lm: 'bin/deepspeech/lm.binary',
   trie: 'bin/deepspeech/trie'
