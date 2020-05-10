@@ -23,7 +23,7 @@ export default () => new Promise(async (resolve, reject) => {
   if (!fs.existsSync(`${destDeepSpeechFolder}/lm.binary`)) {
     try {
       log.info('Downloading pre-trained model...') 
-      await shell(`cd ${tmpDir} && ${downloader} https://github.com/Common-Voice/commonvoice-fr/releases/download/v0.6.0-fr-0.3.4/${archiveName}`)
+      await shell(`cd ${tmpDir} && ${downloader} https://github.com/Common-Voice/commonvoice-fr/releases/download/v0.5.0-fr-0.1/${archiveName}`)
       log.success('Pre-trained model download done')
       log.info('Unpacking...')
       // await shell(`cd ${tmpDir} && tar xvfz ${archiveName}`)
